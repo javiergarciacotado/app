@@ -1431,7 +1431,7 @@ SwaggerClient.prototype.buildFromSpec = function (response) {
 
         operationGroup.apis[operationId] = operationGroup.operations[operationId] = operationObject;
 
-        // legacy UI feature
+        // legacy UI features
         var api = _.find(self.apisArray, function (api) {
           return api.tag === tag;
         });
@@ -29034,7 +29034,7 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable,
     splice = arrayProto.splice;
 
 /**
- * An object environment feature flags.
+ * An object environment features flags.
  *
  * @static
  * @memberOf _

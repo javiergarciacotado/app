@@ -7,10 +7,15 @@
     <groupId>com.revlon</groupId>
     <artifactId>rest</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
         <org.springframework.version>4.1.7.RELEASE</org.springframework.version>
+        <org.glassflish.jersey.version>2.19</org.glassflish.jersey.version>
         <javax.servlet.version>3.1.0</javax.servlet.version>
+        <com.wordnik.version>1.3.12</com.wordnik.version>
+        <junit.version>4.12</junit.version>
+        <info.cukes.version>1.2.3</info.cukes.version>
     </properties>
 
     <build>
@@ -20,15 +25,63 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id></id>
+        </profile>
+    </profiles>
+
     <dependencies>
-        <!-- Spring -->
+        <!-- Spring 4.X -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
 
-        <!-- Servlet -->
+        <!-- Jersey 2.X -->
+        <dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-spring3</artifactId>
+            <version>${org.glassflish.jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${org.glassflish.jersey.version}</version>
+        </dependency>
+
+        <!-- Swagger -->
+        <dependency>
+            <groupId>com.wordnik</groupId>
+            <artifactId>swagger-jersey-jaxrs_2.10</artifactId>
+            <version>${com.wordnik.version}</version>
+        </dependency>
+
+
+        <!-- Test -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${info.cukes.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Servlet 3.X -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -36,6 +89,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-
 </project>
